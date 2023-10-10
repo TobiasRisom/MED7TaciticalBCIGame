@@ -20,12 +20,15 @@ public class EnemyHealth : MonoBehaviour {
     
     private LoggingManager _loggingManager;
 
+    private EnemiesLeft enemiesLeft;
+
     // Start is called before the first frame update
     void Start()
     {
         _loggingManager = GameObject.Find("LoggingManager").GetComponent<LoggingManager>();
         alertTxt = GameObject.Find(name + "/Enemy Billboard/AlertTxt").GetComponent<TextMeshProUGUI>();
         searchTxt = GameObject.Find(name + "/Enemy Billboard/SearchTxt").GetComponent<TextMeshProUGUI>();
+        enemiesLeft = GameObject.Find("EnemiesLeft").GetComponent<EnemiesLeft>();
 
         if (health == 0)
             health = maxHealth;
@@ -57,6 +60,7 @@ public class EnemyHealth : MonoBehaviour {
         anim.SetTrigger("Death");
         LOS.enabled = alertTxt.enabled = searchTxt.enabled = false;
         GetComponent<BoxCollider>().enabled = GetComponent<CapsuleCollider>().enabled = false;
+        enemiesLeft.CheckForRemainingEnemies();
         logPlayerData();
         OnEnemyKilled?.Invoke();
     }
