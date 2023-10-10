@@ -11,6 +11,9 @@ public class EnemyHealth : MonoBehaviour {
     Animator anim;
     public Image LOS;
     public bool alive = true;
+    public delegate void EnemyKilled();
+    public static event EnemyKilled OnEnemyKilled;
+    
     
     private TextMeshProUGUI alertTxt;
     private TextMeshProUGUI searchTxt;
@@ -33,6 +36,7 @@ public class EnemyHealth : MonoBehaviour {
     void Update()
     {
         healthbar.SetHealth(health);
+
         //if (Input.GetKeyDown(KeyCode.Space)) Damage(1);
     }
     
@@ -54,6 +58,7 @@ public class EnemyHealth : MonoBehaviour {
         LOS.enabled = alertTxt.enabled = searchTxt.enabled = false;
         GetComponent<BoxCollider>().enabled = GetComponent<CapsuleCollider>().enabled = false;
         logPlayerData();
+        OnEnemyKilled?.Invoke();
     }
     
     private void logPlayerData()
