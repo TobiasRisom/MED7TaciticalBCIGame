@@ -24,7 +24,10 @@ public class EnemyHealth : MonoBehaviour {
         _loggingManager = GameObject.Find("LoggingManager").GetComponent<LoggingManager>();
         alertTxt = GameObject.Find(name + "/Enemy Billboard/AlertTxt").GetComponent<TextMeshProUGUI>();
         searchTxt = GameObject.Find(name + "/Enemy Billboard/SearchTxt").GetComponent<TextMeshProUGUI>();
+        if(GameObject.Find("EnemiesLeft") != null)
+        {
         enemiesLeft = GameObject.Find("EnemiesLeft").GetComponent<EnemiesLeft>();
+        }
 
         if (health == 0)
             health = maxHealth;
@@ -56,7 +59,10 @@ public class EnemyHealth : MonoBehaviour {
         anim.SetTrigger("Death");
         LOS.enabled = alertTxt.enabled = searchTxt.enabled = false;
         GetComponent<BoxCollider>().enabled = GetComponent<CapsuleCollider>().enabled = false;
+        if(enemiesLeft != null)
+        {
         enemiesLeft.CheckForRemainingEnemies();
+        }
         logPlayerData();
     }
     
