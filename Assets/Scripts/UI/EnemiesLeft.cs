@@ -9,6 +9,7 @@ public class EnemiesLeft : MonoBehaviour
     public GameObject[] enemies;
     private TextMeshProUGUI enemiesLeftTMP;
     // Start is called before the first frame update
+
     void Start()
     {
         enemiesLeftTMP = this.GetComponent<TextMeshProUGUI>();

@@ -11,15 +11,11 @@ public class EnemyHealth : MonoBehaviour {
     Animator anim;
     public Image LOS;
     public bool alive = true;
-    public delegate void EnemyKilled();
-    public static event EnemyKilled OnEnemyKilled;
-    
     
     private TextMeshProUGUI alertTxt;
     private TextMeshProUGUI searchTxt;
     
     private LoggingManager _loggingManager;
-
     private EnemiesLeft enemiesLeft;
 
     // Start is called before the first frame update
@@ -33,13 +29,13 @@ public class EnemyHealth : MonoBehaviour {
         if (health == 0)
             health = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         healthbar.SetHealth(health);
-
         //if (Input.GetKeyDown(KeyCode.Space)) Damage(1);
     }
     
@@ -62,7 +58,6 @@ public class EnemyHealth : MonoBehaviour {
         GetComponent<BoxCollider>().enabled = GetComponent<CapsuleCollider>().enabled = false;
         enemiesLeft.CheckForRemainingEnemies();
         logPlayerData();
-        OnEnemyKilled?.Invoke();
     }
     
     private void logPlayerData()
