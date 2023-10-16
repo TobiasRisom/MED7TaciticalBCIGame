@@ -83,6 +83,6 @@ public class CheckOnscreen : MonoBehaviour
     {
         compassDirection = ((playerCharacter.transform.position + nearestTargetName.transform.position) * 0.5f);
         transform.position = compassDirection;
-        transform.rotation = Quaternion.LookRotation(compassDirection);
+        transform.LookAt(nearestTargetName.transform.position);
     }
 }
