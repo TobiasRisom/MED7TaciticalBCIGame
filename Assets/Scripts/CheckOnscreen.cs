@@ -7,6 +7,7 @@ public class CheckOnscreen : MonoBehaviour
     public GameObject[] targets;
     public List<GameObject> heads = new List<GameObject>();
     public List<float> distancesToEnemy = new List<float>();
+    //public List<bool> whoAlive = new List<bool>();
     public float shortestDistance;
     public GameObject playerCharacter;
     private GameObject nearestTarget;
@@ -45,6 +46,7 @@ public class CheckOnscreen : MonoBehaviour
         for (int i = 0; i < targets.Length; i++)
         {
             distancesToEnemy.Add(Vector3.Distance(playerCharacter.transform.position, heads[i].transform.position));
+            //whoAlive.Add(targets[i].GetComponent<EnemyHealth>().alive);
         }
         shortestDistance = 10;
     }
@@ -62,7 +64,7 @@ public class CheckOnscreen : MonoBehaviour
         }
         for (int i = 0; i < targets.Length; i++)
         {
-            if (distancesToEnemy[i] <= shortestDistance)
+            if (distancesToEnemy[i] <= shortestDistance && targets[i].GetComponent<EnemyHealth>().alive == true)
             {
                 shortestDistance = distancesToEnemy[i];
                 nearestTarget = heads[i];
