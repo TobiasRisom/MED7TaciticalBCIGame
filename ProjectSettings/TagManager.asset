@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Tile
   - Projectile
+  - enemyCompass
   layers:
   - Default
   - TransparentFX

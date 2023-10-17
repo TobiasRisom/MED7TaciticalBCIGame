@@ -5,9 +5,9 @@ using UnityEngine;
 public class CheckOnscreen : MonoBehaviour
 {
     public GameObject[] targets;
+    public GameObject[] guides;
     public List<GameObject> heads = new List<GameObject>();
     public List<float> distancesToEnemy = new List<float>();
-    //public List<bool> whoAlive = new List<bool>();
     public float shortestDistance;
     public GameObject playerCharacter;
     private GameObject nearestTarget;
@@ -28,15 +28,13 @@ public class CheckOnscreen : MonoBehaviour
         updateDistances();
         locateNearestEnemy();
         pointToNearestEnemy();
-        //if (target1.GetComponent<Renderer>().isVisible == false)
-        //{
-        //    print("Gobling1(1) is not currently visable");
-        //}
+        hideCompass();
     }
 
     void targetLocationSetup()
     {
         targets = GameObject.FindGameObjectsWithTag("Enemy");
+        guides = GameObject.FindGameObjectsWithTag("enemyCompass");
         playerCharacter = GameObject.FindWithTag("Player");
         foreach (GameObject e in targets)
         {
@@ -86,5 +84,23 @@ public class CheckOnscreen : MonoBehaviour
         compassDirection = ((playerCharacter.transform.position + nearestTargetName.transform.position) * 0.5f);
         transform.position = compassDirection;
         transform.LookAt(nearestTargetName.transform.position);
+    }
+
+    void hideCompass()
+    {
+        if (nearestTarget.GetComponent<Renderer>().isVisible == false)
+        {
+            for (int i = 0; i < guides.Length; i++)
+            {
+                guides[i].GetComponent<Renderer>().enabled = true;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < guides.Length; i++)
+            {
+                guides[i].GetComponent<Renderer>().enabled = false;
+            }
+        }
     }
 }
