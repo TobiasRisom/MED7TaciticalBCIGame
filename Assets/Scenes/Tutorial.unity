@@ -3497,16 +3497,16 @@ MonoBehaviour:
     Press ''Move'' to confirm.'
   - 'Select the enemy.
 
-    Confirm to  throw a spell!'
-  - 'No more mana!
+    Confirm to start throwing a spell!'
+  - 'You have no mana!
 
-    Charge your mana!'
+    Charge your mana by pressing the button!'
   - 'Grass and water
 
     does not block vision or spells.'
-  - 'Other tiles
+  - 'Other tiles does block spells.
 
-    does block vision or spells.'
+    Goblins attack when they see you.'
 --- !u!4 &1500000733
 Transform:
   m_ObjectHideFlags: 0
