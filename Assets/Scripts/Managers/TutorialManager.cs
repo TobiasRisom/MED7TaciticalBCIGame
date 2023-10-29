@@ -24,6 +24,15 @@ public class TutorialManager : MonoBehaviour {
     private GameMode gameMode;
     private bool checkComplete = false;
 
+    private ConfirmBtn confirmBtn;
+    public GameObject firstTile;
+    public GameObject firstGoblin;
+    public Tile tileScript;
+    public Highlight goblinHiLi;
+    public GameObject mousePointer;
+    private Animator mouseAnim;
+    private Animator playerAnim;
+
     private LoggingManager _loggingManager;
 
     void Awake() {
@@ -32,8 +41,14 @@ public class TutorialManager : MonoBehaviour {
         turnManager = gameManager.GetComponent<TurnManager>();
         gameMode = gameManager.GetComponent<GameMode>();
         player = GameObject.Find("Player");
+        playerAnim = player.GetComponent<Animator>();
         enemies = GameObject.Find("Enemies").GetComponentsInChildren<EnemyHealth>();
         bciSlider = player.GetComponent<BciSlider>();
+        tileScript = firstTile.GetComponent<Tile>();
+        goblinHiLi = firstGoblin.GetComponent<Highlight>();
+        confirmBtn = GameObject.Find("ConfirmBtn").GetComponent<ConfirmBtn>();
+
+        mouseAnim = mousePointer.GetComponent<Animator>();
     }
 
 
@@ -70,6 +85,7 @@ public class TutorialManager : MonoBehaviour {
         CheckMovingArea1(); // Area 1, check player movement (turn end)
         CheckManaArea3(); // Area 3, check mana regain
         CheckEnemyDeath(); // Other areas, check enemy alive
+        AnimationPlayer();
     }
     //It contains the main logic for checking the tutorial progress and triggering events accordingly.
 
@@ -83,6 +99,42 @@ public class TutorialManager : MonoBehaviour {
     If it's area 1 and it's not the player's turn, it starts a coroutine 
     (DelayUpdateArea()) to delay the update of the tutorial area.
     */
+
+    void AnimationPlayer()
+    {
+        if(currentArea == 1 || currentArea == 2)
+        {
+            if(playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+
+                if(tileScript.targetTile == false && goblinHiLi.selected == false)
+                {
+                    mouseAnim.Play("Tutorial Mouse");
+                }
+                else
+                {
+                    mouseAnim.Play("Tutorial Mouse 2");
+                }
+            }
+        
+            else
+            {
+                mouseAnim.Play("Tutorial Mouse Idle");
+            }
+        }
+
+        if(currentArea == 3 && bciSlider.ChargeButton.enabled == true)
+        {
+            mouseAnim.Play("Tutorial Mouse 3");
+        }
+
+        else
+        {
+            mouseAnim.Play("Tutorial Mouse Idle");
+        }
+        
+        
+    }
 
     void CheckEnemyDeath()
     {
