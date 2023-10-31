@@ -123,7 +123,7 @@ public class TutorialManager : MonoBehaviour {
             }
         }
 
-        if(currentArea == 3 && bciSlider.ChargeButton.enabled == true)
+        else if(currentArea == 3 && bciSlider.ChargeButton.enabled == true)
         {
             mouseAnim.Play("Tutorial Mouse 3");
         }
