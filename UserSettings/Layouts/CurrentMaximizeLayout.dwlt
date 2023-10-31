@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 19133
+  controlID: 21662
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -100,7 +100,7 @@ MonoBehaviour:
       y: 21
       width: 694
       height: 300.66666
-    m_Scale: {x: 1.4359748, y: 1.4359748}
+    m_Scale: {x: 1.4763929, y: 1.4763929}
     m_Translation: {x: 347, y: 150.33333}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -108,10 +108,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -241.64769
-      y: -104.69078
-      width: 483.29538
-      height: 209.38156
+      x: -235.03229
+      y: -101.824745
+      width: 470.06458
+      height: 203.64949
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1041, y: 482.5}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 19134
+  controlID: 21663
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 19073
+  controlID: 21640
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,18 +233,18 @@ MonoBehaviour:
       m_ExpandedIDs: 38fbffff3659000082600000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Goblin 2 Variant (1)
+        m_OriginalName: Goblin 2 Variant (1)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -7130
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 696
     height: 342.66666
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -639,8 +639,8 @@ MonoBehaviour:
     y: 342.66666
     width: 956
     height: 236.66666
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -689,21 +689,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Managers
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Managers
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ddani\Desktop\Unity Projecter\TacticalEscapeBCI
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: be6e0000
-    m_LastClickedID: 28350
+    m_SelectedIDs: b66e0000
+    m_LastClickedID: 28342
     m_ExpandedIDs: 000000008a6e0000b66e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 34e6ffff
     m_LastClickedInstanceID: -6604
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

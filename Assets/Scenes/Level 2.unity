@@ -3363,7 +3363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: MaxDistance
-      value: 5.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: rolloffMode
@@ -10485,7 +10485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: MaxDistance
-      value: 5.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: rolloffMode
@@ -27990,7 +27990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: MaxDistance
-      value: 5.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: rolloffMode
@@ -28576,7 +28576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: MaxDistance
-      value: 5.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: rolloffMode
@@ -34943,7 +34943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: MaxDistance
-      value: 5.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: rolloffMode
@@ -37470,7 +37470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: MaxDistance
-      value: 5.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3635737153734962723, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: rolloffMode
