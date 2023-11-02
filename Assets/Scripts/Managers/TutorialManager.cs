@@ -32,8 +32,8 @@ public class TutorialManager : MonoBehaviour {
     public GameObject mousePointer;
     private Animator mouseAnim;
     private Animator playerAnim;
-
     private LoggingManager _loggingManager;
+    private Transform cameraPivot;
 
     void Awake() {
         tutorialUI = GameObject.Find("TutorialText").GetComponent<TMPro.TextMeshProUGUI>();
@@ -47,6 +47,7 @@ public class TutorialManager : MonoBehaviour {
         tileScript = firstTile.GetComponent<Tile>();
         goblinHiLi = firstGoblin.GetComponent<Highlight>();
         confirmBtn = GameObject.Find("ConfirmBtn").GetComponent<ConfirmBtn>();
+        cameraPivot = GameObject.Find("Pivot").transform;
 
         mouseAnim = mousePointer.GetComponent<Animator>();
     }
@@ -134,6 +135,14 @@ public class TutorialManager : MonoBehaviour {
         }
         
         
+    }
+
+    void CameraUpdate()
+    {
+        if(currentArea == 3)
+        {
+            cameraPivot.position = new Vector3(0,0,0);
+        }
     }
 
     void CheckEnemyDeath()
