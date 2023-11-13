@@ -6726,7 +6726,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429788255612120519, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
       propertyPath: maxMana
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429788255612120519, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
+      propertyPath: manaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429788255612120519, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
+      propertyPath: fixedRegenPoints
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5875199749056448752, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
       propertyPath: moveRange
@@ -6751,7 +6759,7 @@ PrefabInstance:
     - target: {fileID: 6616261254364001593, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 8108911995468519910, guid: 13417ac5eafc5c94abfb2007a97aa12c, type: 3}
+      objectReference: {fileID: 5574964739003065767, guid: 8685971b873fc7642b0826179856d531, type: 3}
     - target: {fileID: 6616261254364001599, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -20277,7 +20285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91c8ddb14988d546bf9963d38792133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: {fileID: 6024790085009440240, guid: c2b5b5a5e0604334ea3905f83deaec9f, type: 3}
+  ammo: {fileID: 7919701389755046193, guid: 8685971b873fc7642b0826179856d531, type: 3}
 --- !u!1001 &1003655667
 PrefabInstance:
   m_ObjectHideFlags: 0
