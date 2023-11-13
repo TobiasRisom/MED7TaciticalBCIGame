@@ -20285,7 +20285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91c8ddb14988d546bf9963d38792133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: {fileID: 7919701389755046193, guid: f22eec337251e924d890a0bcb18027a7, type: 3}
+  ammo: {fileID: 8395219217775855047, guid: 8328d9f22dc5ca943a3d3a8857ae2c88, type: 3}
 --- !u!1001 &1003655667
 PrefabInstance:
   m_ObjectHideFlags: 0
