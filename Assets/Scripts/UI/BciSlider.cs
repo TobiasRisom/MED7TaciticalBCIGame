@@ -90,7 +90,7 @@ public class BciSlider : MonoBehaviour
         Slider.maxValue = 1;
 
         resources.mana = 0;
-        resources.maxMana = 10;
+        //resources.maxMana = 10;
         if (gamemode == Gamemode.Interval)
         {
             ShowChargeButton(false);

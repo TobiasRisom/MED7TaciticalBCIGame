@@ -6575,6 +6575,10 @@ PrefabInstance:
       propertyPath: mana
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3429788255612120519, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
+      propertyPath: maxMana
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5875199749056448752, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
       propertyPath: moveRange
       value: 4
@@ -26106,7 +26110,7 @@ PrefabInstance:
       objectReference: {fileID: 162030020}
     - target: {fileID: 8941893838152464325, guid: afb1e044cb2f8b140aeaa03fe4febcc7, type: 3}
       propertyPath: gamemode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afb1e044cb2f8b140aeaa03fe4febcc7, type: 3}
