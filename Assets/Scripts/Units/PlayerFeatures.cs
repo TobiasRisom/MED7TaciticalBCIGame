@@ -23,6 +23,7 @@ public class PlayerFeatures : MonoBehaviour
     private LoggingManager _loggingManager;
     private int dmgTaken = 0;
     private string eventStr;
+    private AmmoSpawn ammoSpawn;
     
     void Start()
     {   
@@ -31,6 +32,7 @@ public class PlayerFeatures : MonoBehaviour
         manaPoints = GameObject.Find("Manapoints").GetComponentsInChildren<Image>();
         healthPoints = GameObject.Find("FillerHearts").GetComponentsInChildren<Image>();
         manaUI = GameObject.Find("Manabar").GetComponentsInChildren<Image>();
+        ammoSpawn = GameObject.Find("Ammo").GetComponent<AmmoSpawn>();
 
         health = maxHealth;
         lastHealth = health;
@@ -112,7 +114,12 @@ public class PlayerFeatures : MonoBehaviour
         eventStr = "RegenMana";
         logPlayerData();
         if (mana >= maxMana) return;
-        if (mana + regenPoints <= maxMana) mana += regenPoints;
+        if (mana + regenPoints <= maxMana)
+        {
+            mana += regenPoints;
+            ammoSpawn.DeleteAmmo();
+            ammoSpawn.SpawnAmmo();
+        } 
         else mana = maxMana;
     }
 
@@ -126,7 +133,12 @@ public class PlayerFeatures : MonoBehaviour
     public void Expend()
     {
         // Debug.Log("Decrease mana " + manaCost);
-        if (mana - manaCost >= 0) mana -= manaCost;
+        if (mana - manaCost >= 0) 
+        {
+            mana -= manaCost;
+            ammoSpawn.DeleteAmmo();
+            ammoSpawn.SpawnAmmo();
+        }
         ManaBarFiller();
     }
 

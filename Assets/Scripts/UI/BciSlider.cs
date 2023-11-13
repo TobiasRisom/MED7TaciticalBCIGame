@@ -274,7 +274,7 @@ public class BciSlider : MonoBehaviour
         Slider.value = 1 - (time / BciPromptDuration);
         StartBciPrompt = false;
         completedReps++;
-        resources.RegenMana(2);
+        resources.RegenMana(1);
         nrOfBCI++;
         success = true;
         eventStr = "BciSuccess";
