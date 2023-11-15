@@ -90,7 +90,7 @@ public class CheckOnscreen : MonoBehaviour
 
     void hideCompass()
     {//checks if the head/renderer of the nearest enemy is onscreen
-        if (nearestTarget.GetComponent<Renderer>().isVisible == false)
+        if (nearestTarget.GetComponent<Renderer>().isVisible == false || shortestDistance > 4.5f)
         {//if not onscreen, show guide arrow
             for (int i = 0; i < guides.Length; i++)
             {
