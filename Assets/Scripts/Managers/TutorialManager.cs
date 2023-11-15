@@ -169,7 +169,7 @@ public class TutorialManager : MonoBehaviour {
             return; // Abort method
         }
         float mana = player.GetComponent<PlayerFeatures>().mana; // Players mana
-        if (mana < 4) return; // Guard not enough mana
+        if (mana < 2) return; // Guard not enough mana
         if (gameMode.gamemode == Gamemode.Interval) { UpdateArea(); // when player has gain mana
         } else { StartCoroutine(DelayUpdateArea(1f)); }
     }
