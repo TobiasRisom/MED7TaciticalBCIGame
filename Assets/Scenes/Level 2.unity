@@ -28540,6 +28540,14 @@ PrefabInstance:
       propertyPath: circlePatrole
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5797992307607917045, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a18f870fa448f634fbd30c140b736920, type: 3}
+    - target: {fileID: 5797992307607917045, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6076424095822093499, guid: 0742f60f8c181504bb1c6bdb5f8ddc2c, type: 3}
       propertyPath: m_Enabled
       value: 1
