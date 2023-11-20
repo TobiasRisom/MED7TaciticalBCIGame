@@ -173,7 +173,7 @@ public class TutorialManager : MonoBehaviour {
         }
         float mana = player.GetComponent<PlayerFeatures>().mana; // Players mana
         float maxMana = player.GetComponent<PlayerFeatures>().maxMana;
-        if (mana < 4) {
+        if (mana < maxMana) {
             return;
             } 
         if (gameMode.gamemode == Gamemode.Interval) { UpdateArea(); // when player has gain mana
