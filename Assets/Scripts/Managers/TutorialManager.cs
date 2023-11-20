@@ -34,6 +34,7 @@ public class TutorialManager : MonoBehaviour {
     private Animator playerAnim;
     private LoggingManager _loggingManager;
     private Transform cameraPivot;
+    private AmmoSpawn ammoSpawn;
 
     void Awake() {
         tutorialUI = GameObject.Find("TutorialText").GetComponent<TMPro.TextMeshProUGUI>();
@@ -48,6 +49,7 @@ public class TutorialManager : MonoBehaviour {
         goblinHiLi = firstGoblin.GetComponent<Highlight>();
         confirmBtn = GameObject.Find("ConfirmBtn").GetComponent<ConfirmBtn>();
         cameraPivot = GameObject.Find("Pivot").transform;
+        ammoSpawn = GameObject.Find("Ammo").GetComponent<AmmoSpawn>();
 
         mouseAnim = mousePointer.GetComponent<Animator>();
     }
@@ -68,7 +70,8 @@ public class TutorialManager : MonoBehaviour {
         if (gameMode.gamemode == Gamemode.Battery)
         {
             res.mana = 1;
-            res.maxMana = 5;
+            //res.maxMana = 5;
+            ammoSpawn.SpawnAmmo();
         }
     }
     /*
@@ -169,7 +172,10 @@ public class TutorialManager : MonoBehaviour {
             return; // Abort method
         }
         float mana = player.GetComponent<PlayerFeatures>().mana; // Players mana
-        if (mana < 4) return; // Guard not enough mana
+        float maxMana = player.GetComponent<PlayerFeatures>().maxMana;
+        if (mana < 4) {
+            return;
+            } 
         if (gameMode.gamemode == Gamemode.Interval) { UpdateArea(); // when player has gain mana
         } else { StartCoroutine(DelayUpdateArea(1f)); }
     }
