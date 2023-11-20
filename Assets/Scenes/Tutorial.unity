@@ -5236,12 +5236,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8044bb5719035e14ab33f5a950770e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreateMetaCollection: 1
+  CreateMetaCollection: 0
   enableMySQLSave: 0
   email: anonymous
   connectToMySQL: {fileID: 0}
-  enableCSVSave: 1
-  logStringOverTime: 1
+  enableCSVSave: 0
+  logStringOverTime: 0
   savePath: 
   filePrefix: log
   fileExtension: .csv

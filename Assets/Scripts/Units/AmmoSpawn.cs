@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AmmoSpawn : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class AmmoSpawn : MonoBehaviour
         playerFeatures = GameObject.Find("Player").GetComponent<PlayerFeatures>();
         player = GameObject.Find("Player").transform;
         manaCount = playerFeatures.mana;
-        // Test manaCount = 5;
         SpawnAmmo();
     }
 
