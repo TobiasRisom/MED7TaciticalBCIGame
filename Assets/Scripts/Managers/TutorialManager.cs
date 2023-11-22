@@ -69,9 +69,9 @@ public class TutorialManager : MonoBehaviour {
         PlayerFeatures res = player.GetComponent<PlayerFeatures>();
         if (gameMode.gamemode == Gamemode.Battery)
         {
-            res.mana = 1;
+            //res.mana = 1;
             //res.maxMana = 5;
-            ammoSpawn.SpawnAmmo();
+           // ammoSpawn.SpawnAmmo();
         }
     }
     /*

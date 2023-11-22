@@ -6726,7 +6726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429788255612120519, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
       propertyPath: maxMana
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3429788255612120519, guid: 1e20fc7f72fc6c047815f71fe20e7c18, type: 3}
       propertyPath: manaCost
@@ -15890,6 +15890,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 33f6e45b11c43b04e8386424d9bb19b3, type: 3}
+    - target: {fileID: 8105094695668924781, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105094695668924781, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105094695668924781, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8170518023474170648, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
       propertyPath: m_Sprite
       value: 

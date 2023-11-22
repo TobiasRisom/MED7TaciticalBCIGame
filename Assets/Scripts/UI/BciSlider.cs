@@ -58,6 +58,8 @@ public class BciSlider : MonoBehaviour
     private bool pressState = false;
 
 
+
+
 //Logging variables_____________
     private int nrOfBCI = 0;
     private LoggingManager _loggingManager;
@@ -78,18 +80,18 @@ public class BciSlider : MonoBehaviour
         FailHighlight = GameObject.Find("Bci Highlight (Fail)").GetComponent<Image>();
         failText = GameObject.Find("BCI Fail Text").GetComponent<TextMeshProUGUI>();
         successText = GameObject.Find("BCI Success Text").GetComponent<TextMeshProUGUI>();
-        
+        resources = GetComponent<PlayerFeatures>();
         BCIAssembly = GameObject.Find("BciBackground").GetComponentsInChildren<Image>();
         Slider = GameObject.Find("Slider").GetComponent<Slider>();
         if (Camera.main != null) shaker = Camera.main.GetComponent<Shake>();
         
         _loggingManager = GameObject.Find("LoggingManager").GetComponent<LoggingManager>();
-        resources = GetComponent<PlayerFeatures>();
+        
         player = GameObject.Find("Player").GetComponent<Player>();
         turnManager = GameObject.Find("GameManager").GetComponent<TurnManager>();
         Slider.maxValue = 1;
 
-        resources.mana = 0;
+        //resources.mana = 1;
         //resources.maxMana = 10;
         if (gamemode == Gamemode.Interval)
         {
@@ -105,11 +107,19 @@ public class BciSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!StartBciPrompt)
+        resources = GetComponent<PlayerFeatures>();
+        /*if (!StartBciPrompt)
         {
             if(gamemode == Gamemode.Battery && showable && complete) 
                 ShowChargeButton(resources.maxMana !> resources.mana);
             return;
+        }*/
+        if (resources.mana >= 1)
+        {
+            ShowChargeButton(false);
+        } else { 
+            ShowChargeButton(true);
+
         }
 
         if (wizardOfOz)
@@ -178,18 +188,19 @@ public class BciSlider : MonoBehaviour
     public void ShowAndHideBci(bool show)
     {
         Slider.enabled = show;
+        ShowChargeButton(false);
         foreach (var currentImg in BCIAssembly)
         {
             if (currentImg.name == "ChargeButton" || currentImg.name == "Mana Bottle") continue;
             currentImg.enabled = show;
-        }
+        } 
         ResetBci();
 
-        if (gamemode != Gamemode.Battery) return;
-        if (targetReps <= completedReps || completedReps == 0 || resources.mana >= resources.maxMana)
+        /*if (gamemode != Gamemode.Battery) return;
+        if (resources.mana >= 1)
         {
             ShowChargeButton(!show);
-        }
+        }*/
 
     }
 
@@ -214,12 +225,12 @@ public class BciSlider : MonoBehaviour
         timeChosen = false;
         willSucceed = false;
         forced = false;
+
     }
 
     public void ChargeMana()
     {
-        targetReps = 1;
-        completedReps = 0;
+        
         
         complete = false;
         ShowAndHideBci(true);
@@ -248,7 +259,7 @@ public class BciSlider : MonoBehaviour
                     yield return null;
                     break;
                 case false:
-                    if (completedReps < targetReps && resources.mana < resources.maxMana)
+                    if (resources.mana < resources.maxMana)
                     {
                         yield return new WaitForSeconds(1.5f);
                         ShowAndHideBci(false);

@@ -11,7 +11,7 @@ public class PlayerFeatures : MonoBehaviour
     private Image[] healthPoints;
     public float health, maxHealth = 100;
     public float mana, maxMana;
-    public float manaCost = 2;
+    public float manaCost = 1;
     public float fixedRegenPoints;
     private float lastHealth;
     private Shake shake;
