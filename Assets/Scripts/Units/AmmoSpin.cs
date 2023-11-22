@@ -14,7 +14,7 @@ public class AmmoSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Spin the object around the target at 20 degrees/second.
+        // Spin
         transform.RotateAround(target.transform.position, Vector3.up, 180 * Time.deltaTime);
     }
 }

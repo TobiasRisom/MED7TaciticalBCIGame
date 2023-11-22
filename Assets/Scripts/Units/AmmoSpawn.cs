@@ -24,8 +24,21 @@ public class AmmoSpawn : MonoBehaviour
     public void SpawnAmmo()
     {
         manaCount = playerFeatures.mana;
+
+        // If there is only one fireball, make it spin right above the head of the player
+        if(manaCount == 1)
+        {
+            Vector3 spawnPosition = player.position + new Vector3(0, height, 0);
+            GameObject newAmmo = Instantiate(ammo, spawnPosition, new Quaternion(0,0,0,0));
+            newAmmo.transform.parent = transform;
+            return;
+        }
+
+        // For any other amount, spawn the fireballs to circle the head of the player
         for (int i = 0; i < manaCount; i++)
         {
+
+            // Fomular that spawns the circles equidistant from each other on the circle
             float angle = i * (2 * Mathf.PI) / manaCount;
             float x = Mathf.Cos(angle) * radius;
             float z = Mathf.Sin(angle) * radius;
