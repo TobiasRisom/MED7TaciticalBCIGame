@@ -64,6 +64,7 @@ public class Player : Unit {
         else if (!isMoving && attackTarget == null) ResetConfirmBtn();
         if (bciPrompt.StartBciPrompt) {
             ResetPlayer();
+            bciPrompt.ShowChargeButton(false);
             return; // Guard BCI active
         }
 
