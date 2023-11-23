@@ -18,7 +18,7 @@ public class GameMode : MonoBehaviour
     private BciSlider bciSlider;
     private Player playerScript;
     private PlayerFeatures playerFeatures;
-    
+    private LanguageVersionManager LVManager;
     private LoggingManager _loggingManager;
 
     private void Awake()
@@ -27,6 +27,7 @@ public class GameMode : MonoBehaviour
         bciSlider = player.GetComponent<BciSlider>();
         playerScript = player.GetComponent<Player>();
         playerFeatures = player.GetComponent<PlayerFeatures>();
+        LVManager = GameObject.Find("Language/VersionManager").GetComponent<LanguageVersionManager>();
         
         bciSlider.gamemode = playerScript.gamemode = playerFeatures.gamemode = gamemode;
         
@@ -36,7 +37,20 @@ public class GameMode : MonoBehaviour
     private void Start()
     {
         logData();
+        if(LVManager != null)
+        {
+            if(LVManager.languagePref == true) // Danish
+            {
+                danish = true;
+            }
+            else // English
+            {
+                danish = false;
+            }
+        }
+
     }
+    
 
     private void logData()
     {

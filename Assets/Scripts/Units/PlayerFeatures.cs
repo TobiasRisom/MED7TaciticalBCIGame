@@ -24,6 +24,7 @@ public class PlayerFeatures : MonoBehaviour
     private int dmgTaken = 0;
     private string eventStr;
     private AmmoSpawn ammoSpawn;
+    private LanguageVersionManager LVManager;
     
     void Start()
     {   
@@ -33,15 +34,27 @@ public class PlayerFeatures : MonoBehaviour
         healthPoints = GameObject.Find("FillerHearts").GetComponentsInChildren<Image>();
         manaUI = GameObject.Find("Manabar").GetComponentsInChildren<Image>();
         ammoSpawn = GameObject.Find("Ammo").GetComponent<AmmoSpawn>();
+        LVManager = GameObject.Find("Language/VersionManager").GetComponent<LanguageVersionManager>();
 
         health = maxHealth;
         lastHealth = health;
         // print(gamemode);
         
-        if (gamemode == Gamemode.Interval)
+        /*if (gamemode == Gamemode.Interval)
         {
             maxMana = mana = 99999;
             HideManaUI();
+        }*/
+        if(LVManager != null)
+        {
+            if(LVManager.gamePref == true) // Battery
+            {
+                maxMana = 4;
+            }
+            else // Interval
+            {
+                maxMana = 1;
+            }
         }
 
         if (gamemode == Gamemode.Battery)
