@@ -43,6 +43,11 @@ public class PlayerFeatures : MonoBehaviour
             maxMana = mana = 99999;
             HideManaUI();
         }
+
+        if (gamemode == Gamemode.Battery)
+        {
+            HideManaUI();
+        }
     }
 
     void Awake() {
