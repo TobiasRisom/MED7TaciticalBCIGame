@@ -15945,6 +15945,42 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4669993894337980476, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
   m_PrefabInstance: {fileID: 737620073}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &737620075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3273439956257734840, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
+  m_PrefabInstance: {fileID: 737620073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &737620076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7734345954690582012, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
+  m_PrefabInstance: {fileID: 737620073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &737620077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737620075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5222085683599c48afb905f3905b5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  danishText: Fejlet...
+--- !u!114 &737620078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737620076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5222085683599c48afb905f3905b5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  danishText: Succes!
 --- !u!1 &748936665
 GameObject:
   m_ObjectHideFlags: 0
@@ -20610,6 +20646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3775190260574412561, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3775190260574412562, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -20656,7 +20696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775190260574412572, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775190260574412572, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
+      propertyPath: classificationThreshold
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3775190260574412572, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
       propertyPath: onBCIMotorImagery.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -20668,7 +20712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775190260574412573, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3775190260574412573, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
       propertyPath: onBCIMotorImagery.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -26779,6 +26823,10 @@ PrefabInstance:
     - target: {fileID: 5412453237133595250, guid: afb1e044cb2f8b140aeaa03fe4febcc7, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941893838152464325, guid: afb1e044cb2f8b140aeaa03fe4febcc7, type: 3}
+      propertyPath: danish
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8941893838152464325, guid: afb1e044cb2f8b140aeaa03fe4febcc7, type: 3}
       propertyPath: player

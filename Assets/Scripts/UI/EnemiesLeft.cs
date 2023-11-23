@@ -1,20 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using SharedDatastructures;
 using TMPro;
 using UnityEngine;
 
 public class EnemiesLeft : MonoBehaviour
 {
+    private GameMode gameMode;
     public GameObject[] enemies;
     private TextMeshProUGUI enemiesLeftTMP;
     // Start is called before the first frame update
 
     void Start()
     {
+        GameObject gameManager = GameObject.Find("GameManager");
+        gameMode = gameManager.GetComponent<GameMode>();
         enemiesLeftTMP = this.GetComponent<TextMeshProUGUI>();
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemiesLeftTMP.text = "Enemies Left: " + enemies.Length;
+
+        if(gameMode.danish == false)
+        {
+            enemiesLeftTMP.text = "Enemies Left: " + enemies.Length;
+        }
+        else
+        {
+            enemiesLeftTMP.text = "Goblins Tilbage: " + enemies.Length;
+        }
     }
 
     // Update is called once per frame
@@ -35,6 +47,13 @@ public class EnemiesLeft : MonoBehaviour
             }
             enemiesAlive++;
         }
-        enemiesLeftTMP.text = "Enemies Left: " + enemiesAlive;
+        if(gameMode.danish == false)
+        {
+            enemiesLeftTMP.text = "Enemies Left: " + enemies.Length;
+        }
+        else
+        {
+            enemiesLeftTMP.text = "Goblins Tilbage: " + enemies.Length;
+        }
     }
 }

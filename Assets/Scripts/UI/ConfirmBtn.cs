@@ -11,12 +11,15 @@ public class ConfirmBtn : MonoBehaviour {
     private TMPro.TextMeshProUGUI text; // Text component
     public Button btn;
     private BoxCollider confirmCol;
+    private GameMode gameMode;
 
     void Awake() {
         btn = GetComponent<Button>();
         image = GameObject.Find("ConfirmSprite").GetComponent<Image>(); // Button image component
         text = GetComponentInChildren<TMPro.TextMeshProUGUI>(); // Button image component
         confirmCol = GetComponent<BoxCollider>();
+        GameObject gameManager = GameObject.Find("GameManager");
+        gameMode = gameManager.GetComponent<GameMode>();
 
         // Update
         DisableImage();
@@ -35,7 +38,26 @@ public class ConfirmBtn : MonoBehaviour {
         confirmCol.enabled = true;
         image.sprite = confirmBtnSprites[spriteName];
         image.enabled = true;
-        text.SetText(spriteName);
+        if(gameMode.danish == false)
+        {
+            text.SetText(spriteName);
+        }
+        else
+        {
+            switch(spriteName)
+            {
+                case "Move":
+                    text.SetText("Flyt");
+                    break;
+                case "Charge":
+                    text.SetText("Mana");
+                    break;
+                case "Attack":
+                    text.SetText("Angrib");
+                    break;
+
+            }
+        }
         btn.interactable = true;
     }
 

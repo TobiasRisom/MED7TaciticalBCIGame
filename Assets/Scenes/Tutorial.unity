@@ -603,6 +603,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 037e1cb0921ca984f9ad37bb6724303b, type: 3}
+--- !u!1 &248066062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7734345954690582012, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
+  m_PrefabInstance: {fileID: 1520769477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &248066066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248066062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5222085683599c48afb905f3905b5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  danishText: Succes!
 --- !u!1 &262087510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1100,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7571937729080648968, guid: 124d0b7aff17a37498398e9a057150a4, type: 3}
   m_PrefabInstance: {fileID: 345097229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &346094383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3273439956257734840, guid: e4e0a66eb8e58934fba9c37a6791375f, type: 3}
+  m_PrefabInstance: {fileID: 1520769477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &346094387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346094383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5222085683599c48afb905f3905b5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  danishText: Fejlet...
 --- !u!1 &353518584
 GameObject:
   m_ObjectHideFlags: 0
@@ -3088,8 +3124,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '{{tutorial_text}}'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 77ece021177ee2b4fac6423a9eec725f, type: 2}
-  m_sharedMaterial: {fileID: -2816920226374615035, guid: 77ece021177ee2b4fac6423a9eec725f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 219d3cc66cece2746a42c776e3f12766, type: 2}
+  m_sharedMaterial: {fileID: 4688728662320215199, guid: 219d3cc66cece2746a42c776e3f12766, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3113,13 +3149,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5198,6 +5234,10 @@ PrefabInstance:
       value: Infographic
       objectReference: {fileID: 0}
     - target: {fileID: 8941893838152464325, guid: afb1e044cb2f8b140aeaa03fe4febcc7, type: 3}
+      propertyPath: danish
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941893838152464325, guid: afb1e044cb2f8b140aeaa03fe4febcc7, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 471069410}
@@ -6050,6 +6090,15 @@ MonoBehaviour:
 
     When
     you''re spotted, they start chasing you!'
+  tutorialTextsDK:
+  - "Tryk p\xE5 et r\xF8dt felt for at v\xE6lge det.\nTryk p\xE5 knappen for at g\xE5
+    derhen."
+  - "V\xE6lg en goblin for at angribe dem.\nTryk p\xE5 knappen for at kaste en ildkugle!"
+  - "Du skal bruge mana for at angribe!\nTryk p\xE5 flasken for at f\xE5 mere mana!"
+  - "Tr\xE6er, sten og blomster blokerer dine angreb.\nBev\xE6g dig rundt om dem
+    og angrib!"
+  - "Goblins g\xF8r dig ikke noget hvis de ikke har set dig.\nHvis en goblin ser
+    dig, jagter den dig!"
   firstTile: {fileID: 1537140800}
   firstGoblin: {fileID: 1414249676}
   tileScript: {fileID: 0}

@@ -15,6 +15,7 @@ public class TutorialManager : MonoBehaviour {
     public GameObject[] spawnPoints;
     private TMPro.TextMeshProUGUI tutorialUI; // Text component
     [TextArea] public string[] tutorialTexts;
+    [TextArea] public string[] tutorialTextsDK;
 
     [Header("Gameplay manipulation")]
     private GameObject player;
@@ -39,8 +40,8 @@ public class TutorialManager : MonoBehaviour {
     void Awake() {
         tutorialUI = GameObject.Find("TutorialText").GetComponent<TMPro.TextMeshProUGUI>();
         GameObject gameManager = GameObject.Find("GameManager");
-        turnManager = gameManager.GetComponent<TurnManager>();
         gameMode = gameManager.GetComponent<GameMode>();
+        turnManager = gameManager.GetComponent<TurnManager>();
         player = GameObject.Find("Player");
         playerAnim = player.GetComponent<Animator>();
         enemies = GameObject.Find("Enemies").GetComponentsInChildren<EnemyHealth>();
@@ -226,7 +227,14 @@ public class TutorialManager : MonoBehaviour {
 
     void UpdateUI() {
         if (currentArea >= tutorialTexts.Length) return; // Guard index error
-        tutorialUI.text = tutorialTexts[currentArea]; // Update text with tutorial text
+        if(gameMode.danish == false)
+        {
+            tutorialUI.text = tutorialTexts[currentArea]; // Update text with tutorial text
+        }
+        else
+        {
+           tutorialUI.text = tutorialTextsDK[currentArea]; 
+        }
     }
 
     void Spawn() {

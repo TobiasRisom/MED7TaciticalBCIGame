@@ -11,6 +11,9 @@ public class GameMode : MonoBehaviour
     public Gamemode gamemode;
 
     public GameObject player;
+
+    [Header("Change Language (Default = English)")]
+    public bool danish = false;
     
     private BciSlider bciSlider;
     private Player playerScript;
