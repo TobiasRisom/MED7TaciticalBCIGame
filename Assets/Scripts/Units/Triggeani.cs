@@ -20,6 +20,7 @@ public class Triggeani : MonoBehaviour
     private float lastHealth;
     private float health;
     private bool dead = false;
+    public bool doNotChargeAndRun = false; //bliver brugt i BciSlider Scriptet til at fjerne chargebutton mens spiller bevæger sig
  
     void Start()
     {
@@ -67,14 +68,16 @@ public class Triggeani : MonoBehaviour
         Vector3 velocity = player.velocity;
         if(moving == true && Mathf.Abs(velocity.x) > 0.1){
             anim.SetFloat("Speed", Mathf.Abs(velocity.x));
+            doNotChargeAndRun = true;
             while (audioSource.isPlaying == false){
                 audioSource.PlayOneShot(move);}
         } else if (moving == true && Mathf.Abs(velocity.z) > 0.1){
             anim.SetFloat("Speed", Mathf.Abs(velocity.z));
+            doNotChargeAndRun = true;
             while (audioSource.isPlaying == false){
                 audioSource.PlayOneShot(move);}
         } else if (moving == false) {
-            
+            doNotChargeAndRun = false;
             anim.SetFloat("Speed", 0);
         }
     }

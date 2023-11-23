@@ -36,6 +36,7 @@ public class BciSlider : MonoBehaviour
     private PlayerFeatures resources;
     private Player player;
     private TurnManager turnManager;
+    private Triggeani trigAni;
 
     [NonSerialized] public Gamemode gamemode;
     [NonSerialized] public bool complete;
@@ -89,6 +90,7 @@ public class BciSlider : MonoBehaviour
         
         player = GameObject.Find("Player").GetComponent<Player>();
         turnManager = GameObject.Find("GameManager").GetComponent<TurnManager>();
+        trigAni = GameObject.Find("Player").GetComponent<Triggeani>();
         Slider.maxValue = 1;
 
         //resources.mana = 1;
@@ -114,12 +116,11 @@ public class BciSlider : MonoBehaviour
                 ShowChargeButton(resources.maxMana !> resources.mana);
             return;
         }*/
-        if (resources.mana >= 1)
+        if (resources.mana >= 1 || trigAni.doNotChargeAndRun)
         {
             ShowChargeButton(false);
         } else { 
             ShowChargeButton(true);
-
         }
 
         if (wizardOfOz)
