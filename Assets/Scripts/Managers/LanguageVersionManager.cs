@@ -18,6 +18,8 @@ public class LanguageVersionManager : MonoBehaviour
     public bool languagePref = true;
     [Header("GameMode: (True = Battery, False = Interval)")]
     public bool gamePref = true;
+    [Header("BCI Pref: (True = Online, False = Simulated)")]
+    public bool BCIPref = true;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -66,6 +68,28 @@ public class LanguageVersionManager : MonoBehaviour
 
         GameObject activeButton = GameObject.Find("INTButton");
         GameObject nonActiveButton = GameObject.Find("BATButton");
+
+        activeButton.transform.Find("Image").GetComponentInChildren<UnityEngine.UI.Image>().color = new(1,1,1,1);
+        nonActiveButton.transform.Find("Image").GetComponentInChildren<UnityEngine.UI.Image>().color = new(1,1,1,0);
+    }
+
+    public void setBCIPrefOnline()
+    {
+        BCIPref = true;
+
+        GameObject activeButton = GameObject.Find("BCIButton");
+        GameObject nonActiveButton = GameObject.Find("SIMButton");
+
+        activeButton.transform.Find("Image").GetComponentInChildren<UnityEngine.UI.Image>().color = new(1,1,1,1);
+        nonActiveButton.transform.Find("Image").GetComponentInChildren<UnityEngine.UI.Image>().color = new(1,1,1,0);
+    }
+
+    public void setBCIPrefSim()
+    {
+        BCIPref = false;
+
+        GameObject activeButton = GameObject.Find("SIMButton");
+        GameObject nonActiveButton = GameObject.Find("BCIButton");
 
         activeButton.transform.Find("Image").GetComponentInChildren<UnityEngine.UI.Image>().color = new(1,1,1,1);
         nonActiveButton.transform.Find("Image").GetComponentInChildren<UnityEngine.UI.Image>().color = new(1,1,1,0);
