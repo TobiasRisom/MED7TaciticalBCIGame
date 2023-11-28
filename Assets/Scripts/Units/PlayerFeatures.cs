@@ -163,7 +163,7 @@ public class PlayerFeatures : MonoBehaviour
     public bool ManaCheck() {
         bool manaCheck = manaCost <= mana;
         // Debug.Log("ManaCheck: " + manaCheck);
-        if (!manaCheck) StartCoroutine(Blink());
+        //if (!manaCheck) StartCoroutine(Blink());
         return manaCheck;
     }
 
