@@ -73,6 +73,15 @@ public class Tile : MonoBehaviour
 
         f = gCost = heuristicCost = 0;
     }
+
+    public void ResetTileSecondClickFix()
+    { //Reset tile to original state - FIXED FOR MULTIPLE CLICKS
+        current = false;
+        targetTile = false; //Target posiiton
+        selectable = false; //The clickable tiles
+
+        f = gCost = heuristicCost = 0;
+    }
     /*
     method resets the tile to its original state, clearing the adjacent list and resetting various flags and values.
     */

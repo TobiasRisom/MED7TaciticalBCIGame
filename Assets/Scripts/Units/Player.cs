@@ -280,14 +280,15 @@ public class Player : Unit {
     }
 
     private void RemoveTileHighlight() {
-        // Debug.Log("RemoveTileHighlight");
+        Debug.Log("RemoveTileHighlight");
         GameObject[] tiles = GameObject.FindGameObjectsWithTag("Tile");
         foreach(var obj in tiles)
         {
             Tile tile = obj.GetComponent<Tile>();
             if (tile.targetTile)
             {
-                tile.ResetTile();
+                //tile.ResetTile();
+                tile.ResetTileSecondClickFix();
                 tile.selectable = true;
             }
         }
