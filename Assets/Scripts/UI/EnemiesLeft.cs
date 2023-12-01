@@ -32,7 +32,7 @@ public class EnemiesLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckForRemainingEnemies();
     }
 
     public void CheckForRemainingEnemies()

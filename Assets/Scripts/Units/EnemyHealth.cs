@@ -59,10 +59,6 @@ public class EnemyHealth : MonoBehaviour {
         anim.SetTrigger("Death");
         LOS.enabled = alertTxt.enabled = searchTxt.enabled = false;
         GetComponent<BoxCollider>().enabled = GetComponent<CapsuleCollider>().enabled = false;
-        if(enemiesLeft != null)
-        {
-        enemiesLeft.CheckForRemainingEnemies();
-        }
         logPlayerData();
     }
     

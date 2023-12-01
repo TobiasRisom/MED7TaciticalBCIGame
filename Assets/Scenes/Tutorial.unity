@@ -431,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775190260574412572, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
       propertyPath: classificationThreshold
-      value: 0.25
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 3775190260574412572, guid: c941a1a16ad63934b91509931ad2cace, type: 3}
       propertyPath: onBCIMotorImagery.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5288,12 +5288,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8044bb5719035e14ab33f5a950770e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreateMetaCollection: 0
+  CreateMetaCollection: 1
   enableMySQLSave: 0
   email: anonymous
   connectToMySQL: {fileID: 0}
-  enableCSVSave: 0
-  logStringOverTime: 0
+  enableCSVSave: 1
+  logStringOverTime: 1
   savePath: 
   filePrefix: log
   fileExtension: .csv
@@ -6087,12 +6087,12 @@ MonoBehaviour:
     Press ''Confirm'' to cast your attack spell!'
   - 'Attacking uses up your mana!
 
-    Charge your mana by selecting the bottle!'
+    Charge your mana by selecting the icon!'
   - 'Trees, rocks and flowers block your attacks.
 
     Move around them to hit the
     goblin!'
-  - 'You and the goblins take turns moving.
+  - 'You and the goblins take turns.
 
     Goblins walk around on their own.
 
