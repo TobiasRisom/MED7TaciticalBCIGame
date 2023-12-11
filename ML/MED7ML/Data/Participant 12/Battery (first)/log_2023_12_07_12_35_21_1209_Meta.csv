@@ -1,0 +1,2 @@
+BCIProcessingMode;ConfidenceThreshold;ConsecutiveThresholdBufferSize;DeviceID;Email;Framecount;SessionID;Timestamp
+ConsecutiveThreshold;0.6400;8;b29c1a88744ea4efb48c793fdac3df937e4909cd;anonymous;45368;fb31188c-2961-477c-8748-524a6829f1b9;2023-12-07 12:35:21.1209
