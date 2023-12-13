@@ -1,5 +1,5 @@
 import pandas as pd
-import numpy as np
+import os
 
 
 def read_csv_to_dataframe(file_path):
@@ -15,12 +15,45 @@ def read_csv_to_dataframe(file_path):
         return None
 
 
-csv_file_path_game = 'Data/Participant 1/BATTERY (first)/log_2023_12_04_10_39_16_1028_Game.csv'
-data_frame = read_csv_to_dataframe(csv_file_path_game)
-print('hi', type(data_frame))
-print(data_frame.head)
-csv_file_path_Sample = 'Data/Participant 1/BATTERY (first)/log_2023_12_04_10_39_16_1028_Sample.csv'
-data_frame2 = read_csv_to_dataframe(csv_file_path_Sample)
+def get_folder(x):
+    # Define the base directory where your participant folders are located
+    base_directory = "Data"
+
+    # Loop through participant folders
+    for participant_number in range(1, x):
+        participant_folder = os.path.join(base_directory, f"Participant {participant_number}")
+
+        # Loop through Battery and Interval folders
+        for subfolder in ["Battery", "Interval"]:
+            subfolder_path = os.path.join(participant_folder, subfolder)
+
+            if subfolder == "Battery":
+                type_fold = 0
+            elif subfolder == "Interval":
+                type_fold = 1
+
+            # Find all files in the subfolder
+            all_files = os.listdir(subfolder_path)
+            print(all_files)
+            # Filter files that start with the common file name prefix
+            relevant_files = [file for file in all_files if file.endswith("Game.csv") or file.endswith("Sample.csv")]
+            print(relevant_files)
+            # Loop through relevant files
+            for file in relevant_files:
+                file_path = os.path.join(subfolder_path, file)
+                print(file_path)
+                # Check if the file ends with "game" or "sample"
+                if file.endswith("Game.csv"):
+                    data_frame = read_csv_to_dataframe(file_path)
+                    print('Game file loaded')
+                elif file.endswith("Sample.csv"):
+                    # Read CSV file using pandas
+                    data_frame2 = read_csv_to_dataframe(file_path)
+                    print('Sample file loaded')
+                else:
+                    print(f"Unrecognized file type: {file_path}")
+            results = count_events_up_to_specific_event(data_frame, type_fold, data_frame2)
+            results.to_csv('Data/Outputs_all/Output_' + str(participant_number) + '_' + str(type_fold))
 
 
 def grab_buffer(df, frame):
@@ -82,12 +115,4 @@ def count_events_up_to_specific_event(data_framer, typer, df2):
 
     return output
 
-
-if 'Event' not in data_frame.columns:
-    raise KeyError("The 'Event' column is not present in the DataFrame.")
-
-results = count_events_up_to_specific_event(data_frame, '0', data_frame2)
-print(results.head())
-print(results.info())
-
-results.to_csv('Data/output_file.csv', index=False)
+get_folder(15)
