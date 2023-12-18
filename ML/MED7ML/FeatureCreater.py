@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import statistics
 
 
 # Read the CSV file into a DataFrame
@@ -68,19 +69,27 @@ def grab_buffer(df, frame):
     # Check if any index was found
     if closest_index:
         index_value = closest_index
-        start_index = max(0, index_value - 8)  # Ensure not to go below index 0, and grabs the 8 last values
+        start_index = max(0, index_value - 15)  # Ensure not to go below index 0, and grabs the 8 last values
         end_index = index_value - 1
         confidences = df.loc[start_index:end_index, 'BCIConfidence'].values   # Locates the confidences of the 8 indexes
-        return confidences
-    else:
-        print(f"No matching index found for frame {frame}")
-        return None
+    print(confidences)
+    miny = min(confidences)
+    print('min' + str(miny))
+    maxy = max(confidences)
+    print('max' + str(maxy))
+    median = statistics.median(confidences)
+    print('med' + str(median))
+    sd = statistics.stdev(confidences)
+    print('sd' + str(sd))
+
+    return miny, maxy, median, sd
+
 
 
 def count_events(data_framer, typer, df2):
     # Created a dataframe to put the event data into
     output = pd.DataFrame(columns=['Index', 'Frame', 'Success', 'Goblin Death', 'Player Hurt',
-                                   'Player Attacking', 'Player Moving', 'Threshbuffer', 'Type'])
+                                   'Player Attacking', 'Player Moving', 'Min', 'Max', 'Median', 'Sd', 'Type'])
 
     # Counters for each event type
     goblin_death_count = 0
@@ -104,12 +113,12 @@ def count_events(data_framer, typer, df2):
             # Adding a new row to the DataFrame for BciSuccess or BciFail
             success_value = 1 if event == 'BciSuccess' else 0
             frames = data_framer['Framecount'][index]   # Gets the framecount for the current index
-            threshbuffer = grab_buffer(df2, frames)   # Gets the 8 last confidences from the Sample file based on the framecount
+            miny, maxy, median, sd = grab_buffer(df2, frames)  # Gets the 8 last confidences from the Sample file based on the framecount
 
             # Puts all the event data into a new row, then concatenates with the output dataframe
             new_row = {'Index': index, 'Frame': frames, 'Success': success_value, 'Goblin Death': goblin_death_count,
                        'Player Hurt': player_hurt_count, 'Player Attacking': player_attacking_count,
-                       'Player Moving': player_moving_count, 'Threshbuffer': threshbuffer, 'Type': typer}
+                       'Player Moving': player_moving_count, 'Min': miny, 'Max': maxy, 'Median': median, 'Sd': sd, 'Type': typer}
             # Convert the new row to a DataFrame
             new_row_df = pd.DataFrame([new_row], columns=output.columns)
 

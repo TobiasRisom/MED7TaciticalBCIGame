@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn import preprocessing
 
 
 # Read the CSV file into a DataFrame
@@ -14,6 +16,10 @@ def read_csv_to_dataframe(file_path):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
+
+
+def remove(df, x):
+    df.drop([x], axis=1, inplace=True)
 
 
 # Combine all data files into one large data set in a dataframe
@@ -43,12 +49,31 @@ def graph_it(df, column):
     plt.show()
 
 
+def graph_other(df, column):
+    plt.figure(figsize=(10, 6))
+    plt.hist(df[column], color = 'green', alpha = 0.75)
+    plt.title(column)
+    plt.savefig('Figures/' + column + '.png')
+    plt.show()
+
+
 # Turns the separate files into one large dataframe
 p_data_df = files_to_df()
 p_data_df.info()
 p_data_df.to_csv('Data/all_data.csv') # Saves all data into one csv file
 
-# Loops over all the wanted columns and graphs them
-graph_columns = ['Success', 'Goblin Death', 'Player Hurt', 'Player Attacking', 'Player Moving', 'Type']
+# Drop the irrelevant columns and create an sns heatmap to show correlation
+p_data_df.drop(['Index', 'Frame', 'Unnamed: 0'], axis=1, inplace=True)
+corr_map = sns.heatmap(p_data_df.corr(), annot=True, cmap="Greens")
+
+graph_columns = ['Success', 'Player Hurt', 'Player Moving', 'Type', 'Player Attacking']
 for i in graph_columns:
     graph_it(p_data_df, i)
+
+graph_others = ['Min', 'Sd', 'Max']
+for i in graph_others:
+    graph_other(p_data_df, i)
+
+plt.show()
+
+p_data_df.to_csv('Data/all_data_rdy1.csv')
